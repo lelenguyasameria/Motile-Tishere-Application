@@ -39,6 +39,9 @@ const upload = multer({ storage });
 /* ROUTING WITH THE FILES */
 app.post("/auth/register", upload.single("picture"), register);
 
+/* ROUTES */
+app.use("/auth", authRoutes);
+
 /* SETUP FOR MONGOOSE */
 const PORT = process.env.PORT || 6001;
 mongoose.connect(process.env.MONGO_URL, {
