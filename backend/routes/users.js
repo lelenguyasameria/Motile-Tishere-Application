@@ -1,10 +1,10 @@
 import express from 'express';
 import {
   getUser,
-	getUserConnections,
+  getUserConnections,
 	addRemoveConnection,
 } from "../controllers/users.js";
-import { verifyToken } from "../middleware/auth.js";
+import { verifyToken } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
