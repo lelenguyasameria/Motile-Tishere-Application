@@ -2,16 +2,16 @@ import { PersonAddOutlined, PersonRemoveOutlined } from "@mui/icons-material";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setFriends } from "state";
+import { setConnections } from "../state"
 import FlexBetween from "./FlexBetween";
 import UserImage from "./UserImage";
 
-const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
+const Connection = ({ connectionId, name, subtitle, userPicturePath }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { _id } = useSelector((state) => state.user);
   const token = useSelector((state) => state.token);
-  const friends = useSelector((state) => state.user.friends);
+  const connections = useSelector((state) => state.user.friends);
 
   const { palette } = useTheme();
   const primaryLight = palette.primary.light;
@@ -19,11 +19,11 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   const main = palette.neutral.main;
   const medium = palette.neutral.medium;
 
-  const isFriend = friends.find((friend) => friend._id === friendId);
+  const isConnection = connections.find((connection) => connection._id === connectionId);
 
-  const patchFriend = async () => {
+  const patchConnection = async () => {
     const response = await fetch(
-      `http://localhost:3001/users/${_id}/${friendId}`,
+      `http://localhost:3001/users/${_id}/${connectionId}`,
       {
         method: "PATCH",
         headers: {
@@ -33,7 +33,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
       }
     );
     const data = await response.json();
-    dispatch(setFriends({ friends: data }));
+    dispatch(setConnections({ connections: data }));
   };
 
   return (
@@ -42,7 +42,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
         <UserImage image={userPicturePath} size="55px" />
         <Box
           onClick={() => {
-            navigate(`/profile/${friendId}`);
+            navigate(`/profile/${connectionId}`);
             navigate(0);
           }}
         >
@@ -65,10 +65,10 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
         </Box>
       </FlexBetween>
       <IconButton
-        onClick={() => patchFriend()}
+        onClick={() => patchConnection()}
         sx={{ backgroundColor: primaryLight, p: "0.6rem" }}
       >
-        {isFriend ? (
+        {isConnection ? (
           <PersonRemoveOutlined sx={{ color: primaryDark }} />
         ) : (
           <PersonAddOutlined sx={{ color: primaryDark }} />
@@ -78,4 +78,4 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   );
 };
 
-export default Friend;
+export default Connection;
