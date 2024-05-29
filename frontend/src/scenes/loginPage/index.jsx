@@ -1,5 +1,6 @@
 // src/Login.js
 import React from 'react';
+import Form from './Form';
 
 const LoginPage = () => {
   return (
@@ -8,12 +9,12 @@ const LoginPage = () => {
         <h1 style={styles.heading}>Motile 'TisHere'</h1>
         <p style={styles.subtitle}>Unleash Your Academic Success with Motile TisHere's Platform</p>
         <div style={styles.loginImage}>
-          <img src="your-image-path" alt="Motile" style={styles.image} />
+          <img src="%PUBLIC_URL%/assets/Motile.png" alt="Motile"/>
         </div>
       </div>
       <div style={styles.loginRight}>
         <h2 style={styles.title}>Motile Tech</h2>
-        <form>
+        <Form>
           <div style={styles.formGroup}>
             <label htmlFor="username" style={styles.label}>Username or email</label>
             <input type="text" id="username" name="username" placeholder="johnsmith007" style={styles.input} />
@@ -39,7 +40,7 @@ const LoginPage = () => {
           <div style={styles.formGroup}>
             <p>Are you new? <a href="/create-account" style={styles.link}>Create an Account</a></p>
           </div>
-        </form>
+        </Form>
       </div>
     </div>
   );
