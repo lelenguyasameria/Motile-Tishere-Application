@@ -1,4 +1,4 @@
-import brycpt from 'bcrypt';
+import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import User from '../models/User.js'
 
@@ -16,8 +16,8 @@ export const register = async (req, res) => {
 			occupation
 		} = req.body;
 
-		const salt = await brycpt.genSalt();
-		const passwordHash = await brycpt.hash(password, salt);
+		const salt = await bcrypt.genSalt();
+		const passwordHash = await bcrypt.hash(password, salt);
 
 		const newUser = newUser({
 			firstName,

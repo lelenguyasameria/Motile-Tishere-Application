@@ -17,7 +17,7 @@ export const getUserConnections = async(req, res) => {
 	const user = await User.findById(id);
 
 	const connections = await Promise.all(
-		user.connection.map((id) => User.findById(id))
+		user.connections.map((id) => User.findById(id))
 	);
 	const formattedConnections = connections.map(
 		({ _id, firstName, lastName, occupation, location, picturePath }) => {
@@ -42,7 +42,7 @@ export const addRemoveConnection = async (req, res) => {
 			connection.connections = connection.connections.filter((id) => id !== Id);
 		} else {
 			user.connections.push(connectionId);
-			connection.connections(id);
+			connection.connections.push(id);
 		}
 		await user.save();
 		await connection.save();
