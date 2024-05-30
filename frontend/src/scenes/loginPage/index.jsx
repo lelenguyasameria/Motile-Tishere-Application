@@ -9,7 +9,7 @@ const LoginPage = () => {
         <h1 style={styles.heading}>Motile 'TisHere'</h1>
         <p style={styles.subtitle}>Unleash Your Academic Success with Motile TisHere's Platform</p>
         <div style={styles.loginImage}>
-          <img src={`${process.env.PUBLIC_URL}/assets/Motile.png`} alt="Motile"/>
+          <img src="%PUBLIC_URL%/assets/Motile.png" alt="Motile"/>
         </div>
       </div>
       <div style={styles.loginRight}>
