@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const userIds = [
   new mongoose.Types.ObjectId(),
@@ -20,7 +20,7 @@ export const users = [
     password: "$2b$10$dsasdgsagasda//G9JxQ4bQ8KXf4OAIe/X/AK9skyWUy",
     picturePath: "p11.jpeg",
     friends: [],
-    location: "lagos, NIG",
+    location: "San Fran, CA",
     occupation: "Software Engineer",
     viewedProfile: 14561,
     impressions: 888822,
@@ -36,7 +36,7 @@ export const users = [
     password: "$!FEAS@!O)_IDJda//G9JxQ4bQ8KXf4OAIe/X/AK9skyWUy",
     picturePath: "p3.jpeg",
     friends: [],
-    location: "Durban, SA",
+    location: "New York, CA",
     occupation: "Degenerate",
     viewedProfile: 12351,
     impressions: 55555,
@@ -148,7 +148,7 @@ export const posts = [
     userId: userIds[1],
     firstName: "Steve",
     lastName: "Ralph",
-    location: "Cairo, EGY",
+    location: "New York, CA",
     description: "Some really long random description",
     picturePath: "post1.jpeg",
     userPicturePath: "p3.jpeg",
@@ -169,7 +169,7 @@ export const posts = [
     userId: userIds[3],
     firstName: "Whatcha",
     lastName: "Doing",
-    location: "Kampala, UG",
+    location: "Korea, CA",
     description:
       "Another really long random description. This one is longer than the previous one.",
     picturePath: "post2.jpeg",
@@ -192,7 +192,7 @@ export const posts = [
     userId: userIds[4],
     firstName: "Jane",
     lastName: "Doe",
-    location: "Kisumu, KE",
+    location: "Utah, CA",
     description:
       "This is the last really long random description. This one is longer than the previous one.",
     picturePath: "post3.jpeg",
@@ -216,7 +216,7 @@ export const posts = [
     userId: userIds[5],
     firstName: "Harvey",
     lastName: "Dunn",
-    location: "Nairobi, KE",
+    location: "Los Angeles, CA",
     description:
       "This is the last really long random description. This one is longer than the previous one. Man I'm bored. I'm going to keep typing until I run out of things to say.",
     picturePath: "post4.jpeg",
@@ -240,7 +240,7 @@ export const posts = [
     userId: userIds[6],
     firstName: "Carly",
     lastName: "Vowel",
-    location: "Nakuru, KE",
+    location: "Chicago, IL",
     description:
       "Just a short description. I'm tired of typing. I'm going to play video games now.",
     picturePath: "post5.jpeg",
@@ -264,7 +264,7 @@ export const posts = [
     userId: userIds[7],
     firstName: "Jessica",
     lastName: "Dunn",
-    location: "Addis Ababa, ETH",
+    location: "Washington, DC",
     description:
       "For the last time, I'm going to play video games now. I'm tired of typing. I'm going to play video games now.",
     picturePath: "post6.jpeg",
